@@ -105,6 +105,9 @@ public class AppDashBoard extends AndroidActions {
 	
 	@AndroidFindBy(accessibility="Credit Statement")
 	private WebElement creditStatement;
+	public void clickCreditStatement() {
+		creditStatement.click();
+	}
 	
 	
 	
