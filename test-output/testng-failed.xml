@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test name="Default test(failed)">
     <classes>
-      <class name="MobileAppTestingFrameWork.ProfileEditorTest">
+      <class name="MobileAppTestingFrameWork.AddcreditTest">
         <methods>
           <include name="StopServerAndDriver"/>
-          <include name="profileEditTest"/>
+          <include name="AddCreditTest"/>
           <include name="StartAppiumServerAndOptionClass"/>
         </methods>
-      </class> <!-- MobileAppTestingFrameWork.ProfileEditorTest -->
+      </class> <!-- MobileAppTestingFrameWork.AddcreditTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

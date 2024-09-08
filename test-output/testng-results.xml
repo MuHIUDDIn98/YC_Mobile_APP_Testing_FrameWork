@@ -2,32 +2,32 @@
 <testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-09-06T16:41:20Z" name="Default suite" finished-at="2024-09-06T16:42:26Z" duration-ms="65522">
+  <suite started-at="2024-09-08T14:48:58Z" name="Default suite" finished-at="2024-09-08T14:49:52Z" duration-ms="54863">
     <groups>
     </groups>
-    <test started-at="2024-09-06T16:41:20Z" name="Default test" finished-at="2024-09-06T16:42:26Z" duration-ms="65522">
-      <class name="MobileAppTestingFrameWork.ProfuleUpdateTest">
-        <test-method is-config="true" signature="StartAppiumServerAndOptionClass()[pri:0, instance:MobileAppTestingFrameWork.ProfuleUpdateTest@600b90df]" started-at="2024-09-06T22:41:20Z" name="StartAppiumServerAndOptionClass" finished-at="2024-09-06T22:41:36Z" duration-ms="16007" status="PASS">
+    <test started-at="2024-09-08T14:48:58Z" name="Default test" finished-at="2024-09-08T14:49:52Z" duration-ms="54863">
+      <class name="MobileAppTestingFrameWork.AddcreditTest">
+        <test-method is-config="true" signature="StartAppiumServerAndOptionClass()[pri:0, instance:MobileAppTestingFrameWork.AddcreditTest@600b90df]" started-at="2024-09-08T20:48:58Z" name="StartAppiumServerAndOptionClass" finished-at="2024-09-08T20:49:15Z" duration-ms="17701" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- StartAppiumServerAndOptionClass -->
-        <test-method signature="WelcomeMsgPageTransitionTest()[pri:1, instance:MobileAppTestingFrameWork.ProfuleUpdateTest@600b90df]" started-at="2024-09-06T22:41:36Z" name="WelcomeMsgPageTransitionTest" finished-at="2024-09-06T22:41:39Z" duration-ms="3029" status="PASS">
+        <test-method signature="WelcomeMsgPageTransitionTest()[pri:1, instance:MobileAppTestingFrameWork.AddcreditTest@600b90df]" started-at="2024-09-08T20:49:15Z" name="WelcomeMsgPageTransitionTest" finished-at="2024-09-08T20:49:19Z" duration-ms="3285" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- WelcomeMsgPageTransitionTest -->
-        <test-method signature="ProperLogin()[pri:2, instance:MobileAppTestingFrameWork.ProfuleUpdateTest@600b90df]" started-at="2024-09-06T22:41:39Z" name="ProperLogin" finished-at="2024-09-06T22:41:51Z" duration-ms="11524" status="PASS">
+        <test-method signature="ProperLogin()[pri:2, instance:MobileAppTestingFrameWork.AddcreditTest@600b90df]" started-at="2024-09-08T20:49:19Z" name="ProperLogin" finished-at="2024-09-08T20:49:30Z" duration-ms="11265" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ProperLogin -->
-        <test-method signature="ProfuleUpdate()[pri:3, instance:MobileAppTestingFrameWork.ProfuleUpdateTest@600b90df]" started-at="2024-09-06T22:41:51Z" name="ProfuleUpdate" finished-at="2024-09-06T22:42:25Z" duration-ms="34731" status="PASS">
+        <test-method signature="AddCreditTest()[pri:3, instance:MobileAppTestingFrameWork.AddcreditTest@600b90df]" started-at="2024-09-08T20:49:30Z" name="AddCreditTest" finished-at="2024-09-08T20:49:52Z" duration-ms="22324" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- ProfuleUpdate -->
-        <test-method is-config="true" signature="StopServerAndDriver()[pri:0, instance:MobileAppTestingFrameWork.ProfuleUpdateTest@600b90df]" started-at="2024-09-06T22:42:25Z" name="StopServerAndDriver" finished-at="2024-09-06T22:42:26Z" duration-ms="218" status="PASS">
+        </test-method> <!-- AddCreditTest -->
+        <test-method is-config="true" signature="StopServerAndDriver()[pri:0, instance:MobileAppTestingFrameWork.AddcreditTest@600b90df]" started-at="2024-09-08T20:49:52Z" name="StopServerAndDriver" finished-at="2024-09-08T20:49:52Z" duration-ms="275" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- StopServerAndDriver -->
-      </class> <!-- MobileAppTestingFrameWork.ProfuleUpdateTest -->
+      </class> <!-- MobileAppTestingFrameWork.AddcreditTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

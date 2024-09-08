@@ -1,12 +1,13 @@
 package MobileAppTestingFrameWork;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import MobileAppTestingFrameWorkAndroid.LoginPage;
 import MobileAppTestingFrameWorkAndroid.ProfileInfoUpdate;
 import MobileAppTestingFrameWorkAndroid.WelcomePage;
 
-public class ProfuleUpdateTest extends BaseTest {
+public class ProfileUpdateTest extends BaseTest {
 
 	@Test(priority=1)
 	public void WelcomeMsgPageTransitionTest() {
@@ -72,6 +73,7 @@ public class ProfuleUpdateTest extends BaseTest {
 		driver.hideKeyboard();
 		pi.ClickUpdateButton();
 		System.out.println(pi.GetUpdateSussecsmsg());
+		Assert.assertEquals(pi.GetUpdateSussecsmsg(), "Profile Updated Successfully.");
 		
 		Thread.sleep(2000);
 		
