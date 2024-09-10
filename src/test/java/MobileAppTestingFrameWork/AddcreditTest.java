@@ -94,12 +94,16 @@ public class AddcreditTest extends BaseTest{
 		Assert.assertTrue(ACPP.getTotalDisplayedAmount()==actualTotalPayment);
 		
 		
+		//Others payment way
+		ACPP.clickOthers();
+		
+		
 		//Payment activity
 		ACPP.clickAmarPay();
 		ACPP.clickAddCreditButton();
 		ACPP.clickMasterCard();
 		
-		scrollViewByText("Success");
+		ACPP.ScrollToEnd();
 		ACPP.clickSuccess();
 		ACPP.clickOkSuccess();
 		

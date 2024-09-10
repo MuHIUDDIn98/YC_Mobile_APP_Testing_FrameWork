@@ -45,6 +45,7 @@ public class yourOfferProductFindTest extends BaseTest {
 		AppDashBoard AD = new AppDashBoard(driver);
 		YourOfferSectionPage YP = new YourOfferSectionPage(driver);
 		AD.ClickYourOffer();
+		
 		//YP.FastScrolling();
 //		System.out.println("discovered product element is yourOffer section +++++++++++++"+YP.discoveredProducts.size());
 //		

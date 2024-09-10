@@ -74,6 +74,20 @@ public class AndroidActions {
 	}
 	
 	
+	public void swipeElementBycords(int parcent,int startX, int startY,int speed,int height,String direction) {
+		
+		((JavascriptExecutor) driver).executeScript("mobile: swipeGesture", ImmutableMap.of(
+		    "left", startX, 
+		    "top", startY, 
+		    "width", 200, 
+		    "height", height,
+		    "speed",speed,
+		    "direction", direction,
+		    "percent", parcent
+		));
+	}
+	
+	
 	public void dragNdropByElementNCordinate(WebElement elem,int endX,int endY) {
 		
 		// Java
