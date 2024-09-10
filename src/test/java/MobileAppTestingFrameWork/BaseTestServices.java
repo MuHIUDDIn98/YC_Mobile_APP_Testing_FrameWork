@@ -25,15 +25,15 @@ import io.appium.java_client.service.local.AppiumServiceBuilder;
 public class BaseTestServices {
 	
 	
-	String emulatorPath = "C:\\Users\\Onick\\AppData\\Local\\Android\\Sdk\\emulator\\emulator.exe";
-	String avdName = "Pixel_7_Pro_API_34";
-	String mainJsPath ="C:\\Users\\Onick\\AppData\\Roaming\\npm\\node_modules\\appium\\build\\lib\\main.js";
+	String emulatorPath = System.getProperty("user.home")+"\\AppData\\Local\\Android\\Sdk\\emulator\\emulator.exe";
+	String avdName = "Pixel_8_Pro_API_33";
+	String mainJsPath =System.getProperty("user.home")+"\\AppData\\Roaming\\npm\\node_modules\\appium\\build\\lib\\main.js";
 	String AppiumServerIP = "127.0.0.1";
-	static String EMULATOR_PATH = "C:\\Users\\Onick\\AppData\\Local\\Android\\Sdk\\emulator\\emulator.exe"; // Update this path
-    static String AVD_NAME = "Pixel_7_Pro_API_34"; // Update this to your AVD name
+	static String EMULATOR_PATH = System.getProperty("user.home")+"\\AppData\\Local\\Android\\Sdk\\emulator\\emulator.exe"; // Update this path
+    static String AVD_NAME = "Pixel_8_Pro_API_33"; // Update this to your AVD name
 	int AppiumPort = 4723;
 	String appPath =System.getProperty("user.dir") + File.separator + "src" + File.separator + "main"
-            + File.separator+"java" + File.separator + "ApkResource"+File.separator+"TEST_Cashin_V2_20240904_v1.apk";
+            + File.separator+"java" + File.separator + "ApkResource"+File.separator+"YourCampus_20240910_V3.apk";
 	
 	public AndroidDriver driver;
 	

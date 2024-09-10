@@ -7,8 +7,6 @@
         <methods>
           <include name="yourOfferTest"/>
           <include name="StopServerAndDriver"/>
-          <include name="ProperLogin"/>
-          <include name="WelcomeMsgPageTransitionTest"/>
           <include name="StartAppiumServerAndOptionClass"/>
         </methods>
       </class> <!-- MobileAppTestingFrameWork.yourOfferProductFindTest -->

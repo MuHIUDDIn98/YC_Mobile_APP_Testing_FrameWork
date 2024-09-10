@@ -20,6 +20,37 @@ public class YourOfferSectionPage extends AndroidActions {
 	@AndroidFindBy(accessibility="All")
 	public WebElement AllCategory;
 	
+//	@AndroidFindBy()
+//	public List<WebElement> categories;
+//	
+//	public int  categoryCount() {
+//		return categories.size();
+//		}
+
+	@AndroidFindBy(accessibility="Phone")
+	public WebElement Phone;
+	
+	public boolean isExistPhone() {
+		return Phone.isDisplayed();
+	}
+	
+	
+//	public void clickPhone() {
+//		
+//		while(!Phone.isDisplayed()) {
+//			swipeCategory();
+//		}
+//		Phone.click();
+//		
+//	}
+	
+	
+	
+	public void swipeCategory() {
+		swipeElementBycords(1,355,955,200,200,"left");
+	}
+	 
+	
 	
 	@AndroidFindBy(xpath="//android.view.View[contains(@content-desc, \"save\")]")
 	public List<WebElement> discoveredProducts;

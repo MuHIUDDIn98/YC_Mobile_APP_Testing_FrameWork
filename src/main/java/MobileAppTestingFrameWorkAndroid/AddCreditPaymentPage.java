@@ -61,6 +61,15 @@ public class AddCreditPaymentPage extends AndroidActions{
 		
 	}
 	
+	@AndroidFindBy(xpath="//android.view.View[@content-desc=\"Others\"]")
+	public WebElement Others;
+	
+	public void clickOthers() {
+		
+		Others.click();
+	}
+	
+	
 	@AndroidFindBy(accessibility="Amar Pay")
 	private WebElement amarPay;
 	public void clickAmarPay() {
