@@ -30,6 +30,39 @@ public class AndroidActions {
 		Thread.sleep(2000);
 	}
 	
+	public boolean scrollTo(double parcent,int speedpx, int Height,String direction) {
+		boolean canScrollMore = (Boolean) ((JavascriptExecutor) driver).executeScript("mobile: scrollGesture", ImmutableMap.of(
+			    "left", 683, 
+			    "top", 560, 
+			    "width", 200, 
+			    "height", Height,
+			    "direction", direction, //up , down
+			    "percent", parcent, //Scrolls 300% of the visible area, making it faster
+			    "speed", speedpx //Speed in pixels per second (optional if supported)
+			));
+		return canScrollMore;
+	}
+	
+	
+	
+	public void ScrollToEnd() {
+		boolean scrollable = true;
+		
+		while(scrollable) {
+			
+			scrollable = scrollTo(1,1000,900,"down");
+			//scrollTo(percentage,speedpx,Height,"down")
+			System.out.println("scrolling........900px 1000px/s.......... ");
+//			scrollable = scrollTo(1,10000,2000,"up");
+			
+		}
+		
+	}
+	
+	
+	
+	
+	
 	
 	public void swipeElement(WebElement ele,String direction) {
 		
