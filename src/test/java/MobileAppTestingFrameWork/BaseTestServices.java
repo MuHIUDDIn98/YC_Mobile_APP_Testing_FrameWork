@@ -24,14 +24,18 @@ import io.appium.java_client.service.local.AppiumServiceBuilder;
 
 public class BaseTestServices {
 	
-	
-	String emulatorPath = System.getProperty("user.home")+"\\AppData\\Local\\Android\\Sdk\\emulator\\emulator.exe";
-	String avdName = "Pixel_8_Pro_API_33";
+	//for windows
 	String mainJsPath =System.getProperty("user.home")+"\\AppData\\Roaming\\npm\\node_modules\\appium\\build\\lib\\main.js";
 	String AppiumServerIP = "127.0.0.1";
 	static String EMULATOR_PATH = System.getProperty("user.home")+"\\AppData\\Local\\Android\\Sdk\\emulator\\emulator.exe"; // Update this path
     static String AVD_NAME = "Pixel_8_Pro_API_33"; // Update this to your AVD name
+    String UDID = "emulator-5554";
 	int AppiumPort = 4723;
+	
+	
+	
+	String appPackage = "com.mnt.your_campus";
+	String appActivity = "com.mnt.your_campus.MainActivity";
 	String appPath =System.getProperty("user.dir") + File.separator + "src" + File.separator + "main"
             + File.separator+"java" + File.separator + "ApkResource"+File.separator+"YourCampus_20240910_V3.apk";
 	
@@ -44,7 +48,7 @@ public class BaseTestServices {
 		 service = new AppiumServiceBuilder().withAppiumJS(new File(mainJsPath)).withIPAddress(AppiumServerIP).usingPort(AppiumPort).build();
 		 
 		 service.start();
-		 System.out.println("Appium server started");
+		 System.out.println("++++++++++++++++++++++Appium server started+++++++++++++++++");
 			
 	}
 	
@@ -53,7 +57,7 @@ public class BaseTestServices {
 		//UiAutomation options selection
 				UiAutomator2Options options = new UiAutomator2Options();
 				//setting uiautomator capabilities options
-				options.setDeviceName(avdName);
+				options.setDeviceName(AVD_NAME);
 //				String appPath =System.getProperty("user.dir") + File.separator + "src" + File.separator + "test"
 //		                + File.separator+"java" + File.separator + "ResouscesApk"+File.separator+"YourCampus_2024_08_28_V1.apk";
 				
@@ -78,70 +82,19 @@ public class BaseTestServices {
 		DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
         desiredCapabilities.setCapability("platformName", "android");
         desiredCapabilities.setCapability("appium:automationName","UiAutomator2");
-        desiredCapabilities.setCapability("appium:deviceName","Pixel_7_Pro_API_34");
-        desiredCapabilities.setCapability("appium:udid","emulator-5554");
+        desiredCapabilities.setCapability("appium:deviceName",AVD_NAME);
+        desiredCapabilities.setCapability("appium:udid",UDID);
         desiredCapabilities.setCapability("appium:app", appPath);
         //for emulator launch through appium
-        desiredCapabilities.setCapability("appium:avd", "Pixel_7_Pro_API_34");
+        desiredCapabilities.setCapability("appium:avd", AVD_NAME);
         desiredCapabilities.setCapability("appium:avdLaunchTimeout", 24000);
-        desiredCapabilities.setCapability("appium:appPackage","com.mnt.your_campus");
-        desiredCapabilities.setCapability("appium:appActivity","com.mnt.your_campus.MainActivity");
+        desiredCapabilities.setCapability("appium:appPackage",appPackage);
+        desiredCapabilities.setCapability("appium:appActivity",appActivity);
         
         URL remoteUrl = new URL("http://127.0.0.1:4723");
         
         driver = new AndroidDriver(remoteUrl,desiredCapabilities);
 	}
-	
-	
-	
-	//Gestures function
-	
-	public void longPressAction(WebElement element) {
-		
-		((JavascriptExecutor)driver).executeScript("mobile: longClickGesture", ImmutableMap.of(
-				"elementId",((RemoteWebElement)element).getId()),
-				"duration",2000);
-	}
-	
-	public void scrollViewByText(String element) throws InterruptedException {
-		driver.findElement(AppiumBy.androidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\""+element+"\"));"));
-		Thread.sleep(2000);
-	}
-	
-	
-	public void swipeElement(WebElement ele,String direction) {
-		
-		((JavascriptExecutor) driver).executeScript("mobile: swipeGesture", ImmutableMap.of(
-			    "elementId",((RemoteWebElement)ele).getId(),
-			    "direction", direction,
-			    "percent", 0.1
-			));
-	}
-	
-	
-	public void dragNdropByElementNCordinate(WebElement elem,int endX,int endY) {
-		
-		// Java
-		((JavascriptExecutor) driver).executeScript("mobile: dragGesture", ImmutableMap.of(
-		    "elementId", ((RemoteWebElement) elem).getId(),
-		    "endX", endX,
-		    "endY", endY
-		));
-	}
-	
-	public void dragNdropByCordinate(int startX,int startY,int endX,int endY) {
-		// Java
-				((JavascriptExecutor) driver).executeScript("mobile: dragGesture", ImmutableMap.of(
-					"startX",startX,
-					"startY",startY,
-				    "endX", endX,
-				    "endY", endY
-				));
-			
-		}
-		
-	
-	
 	
 	
 	
@@ -157,16 +110,7 @@ public class BaseTestServices {
 	
 	
 	
-	
-	public static void setEmuPath(String path) {
-	    	
-	    	EMULATOR_PATH = path;
-	    }
-	    
-	    public static void setAvdName(String name) {
-	    	
-	    	AVD_NAME = name;
-	    }
+
 	
 	
 	
