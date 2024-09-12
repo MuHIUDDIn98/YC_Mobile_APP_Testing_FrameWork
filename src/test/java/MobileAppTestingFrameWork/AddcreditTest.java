@@ -1,5 +1,7 @@
 package MobileAppTestingFrameWork;
 
+import java.util.Set;
+
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -100,6 +102,12 @@ public class AddcreditTest extends BaseTest{
 		
 		//Payment activity
 		ACPP.clickAmarPay();
+		
+		Set<String> contexts = driver.getContextHandles();
+		for(String contextName : contexts) {
+			System.out.println("ContextName" + contextName);
+		}
+		
 		ACPP.clickAddCreditButton();
 		ACPP.clickMasterCard();
 		
