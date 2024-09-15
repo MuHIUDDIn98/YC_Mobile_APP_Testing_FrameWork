@@ -15,15 +15,19 @@ import org.openqa.selenium.remote.RemoteWebElement;
 
 import com.google.common.collect.ImmutableMap;
 
+import AllCommonUtils.AppiumUtils;
 import io.appium.java_client.AppiumBy;
+import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.options.UiAutomator2Options;
 import io.appium.java_client.service.local.AppiumDriverLocalService;
 import io.appium.java_client.service.local.AppiumServiceBuilder;
 
 
-public class BaseTestServices {
+public class BaseTestServices extends AppiumUtils {
 	
+
+
 	//for windows
 	String mainJsPath =System.getProperty("user.home")+"\\AppData\\Roaming\\npm\\node_modules\\appium\\build\\lib\\main.js";
 	String AppiumServerIP = "127.0.0.1";

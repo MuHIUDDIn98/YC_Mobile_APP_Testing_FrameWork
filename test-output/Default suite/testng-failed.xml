@@ -3,14 +3,14 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test name="Default test(failed)">
     <classes>
-      <class name="MobileAppTestingFrameWork.LoginDataDrivenTesting">
+      <class name="AllTestClasses.LoginDataDriverTestingWithJsonFile">
         <methods>
+          <include name="skip"/>
           <include name="StopServerAndDriver"/>
-          <include name="choseActivity"/>
-          <include name="incorrectPasswordTest" invocation-numbers="1 2"/>
           <include name="StartAppiumServerAndOptionClass"/>
+          <include name="incorrectPasswordTest"/>
         </methods>
-      </class> <!-- MobileAppTestingFrameWork.LoginDataDrivenTesting -->
+      </class> <!-- AllTestClasses.LoginDataDriverTestingWithJsonFile -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

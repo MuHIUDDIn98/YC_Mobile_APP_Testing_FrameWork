@@ -1,42 +1,35 @@
 package AllTestClasses;
 
-import org.testng.Assert;
-import org.testng.annotations.BeforeMethod;
+import java.io.File;
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.List;
+
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import AndroidPageObjects.LoginPage;
-import io.appium.java_client.AppiumDriver;
-import io.appium.java_client.android.Activity;
 
-public class LoginDataDrivenTesting extends BaseTest{
-	
-	
-	@BeforeMethod
-	public void resetAPP() {
-		
-		
-	}
-	
-	
+public class loginDataDriverTestV3 extends BaseTest {
 	
 	@Test(priority = 1)
 	public  void skip() {
-LoginPage loginPage = new LoginPage(driver);
+		LoginPage loginPage = new LoginPage(driver);
 		
-		//System.out.println(driver.isAppInstalled("com.mnt.your_campus"));
 		loginPage.ClickSkip();
 		
 	}
 	
 	
 	@Test(dataProvider="getData" ,priority=2)
-	public void incorrectPasswordTest(String number,String password) throws InterruptedException {
+	public void incorrectPasswordTest(List<HashMap<String, String>> data) throws InterruptedException {
 		
-		
+	for (HashMap<String, String> map : data) {
+        String number = map.get("number");
+        String password = map.get("pass");
+            
+            
 		LoginPage loginPage = new LoginPage(driver);
-		
-		System.out.println(driver.isAppInstalled("com.mnt.your_campus"));
 		//loginPage.ClickSkip();
 		loginPage.clickNumberField();
 		loginPage.clearNumberField();
@@ -50,7 +43,8 @@ LoginPage loginPage = new LoginPage(driver);
 //		System.out.println(incorrectMsg);
 //		Assert.assertEquals(incorrectMsg, "Incorrect Mobile Number OR PIN");
 		
-		Thread.sleep(3000);
+		Thread.sleep(1000);
+		}
 	}
 	
 	
@@ -62,19 +56,15 @@ LoginPage loginPage = new LoginPage(driver);
 	
 	
 	@DataProvider	
-	public Object [][] getData(){
+	public Object [][] getData() throws IOException{
 		
-		return new Object[][] {
-				{"01521327657" , ""},
-				{"" , "123456"},
-				{"01521327657" , "123456"}
-			};
+		List<HashMap<String, String>> data = getJsonData(System.getProperty("user.dir") + File.separator + "src" + File.separator + "main"
+	            + File.separator+"java" + File.separator + "TestData"+File.separator+"UserCredList.json");
+		
+		Object[][] objectArray = new Object[1][];
+        objectArray[0] = new Object[]{data};
+
+        return objectArray;
 	}
-	
-	
-	
-	
-	
-	
-	
+
 }
