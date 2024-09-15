@@ -3,13 +3,14 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test name="Default test(failed)">
     <classes>
-      <class name="MobileAppTestingFrameWork.AddcreditTest">
+      <class name="MobileAppTestingFrameWork.LoginDataDrivenTesting">
         <methods>
           <include name="StopServerAndDriver"/>
-          <include name="AddCreditTest"/>
+          <include name="choseActivity"/>
+          <include name="incorrectPasswordTest" invocation-numbers="1 2"/>
           <include name="StartAppiumServerAndOptionClass"/>
         </methods>
-      </class> <!-- MobileAppTestingFrameWork.AddcreditTest -->
+      </class> <!-- MobileAppTestingFrameWork.LoginDataDrivenTesting -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
