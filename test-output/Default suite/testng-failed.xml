@@ -3,14 +3,14 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test name="Default test(failed)">
     <classes>
-      <class name="AllTestClasses.LoginDataDriverTestingWithJsonFile">
+      <class name="AllTestClasses.welcomeMsgTest">
         <methods>
-          <include name="skip"/>
+          <include name="ProperLogin"/>
+          <include name="WelcomeMsgPageTransitionTest"/>
           <include name="StopServerAndDriver"/>
-          <include name="StartAppiumServerAndOptionClass"/>
-          <include name="incorrectPasswordTest"/>
+          <include name="StartAppiumServerAndSetOptionClass"/>
         </methods>
-      </class> <!-- AllTestClasses.LoginDataDriverTestingWithJsonFile -->
+      </class> <!-- AllTestClasses.welcomeMsgTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

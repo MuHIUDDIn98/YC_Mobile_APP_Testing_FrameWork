@@ -1,36 +1,30 @@
 package AllCommonUtils;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
-import java.time.Duration;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Properties;
 
 import org.apache.commons.io.FileUtils;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.service.local.AppiumDriverLocalService;
+import io.appium.java_client.service.local.AppiumServiceBuilder;
 
 public class AppiumUtils {
 	AppiumDriver driver;
-	
+	AppiumDriverLocalService service;
+//	String mainJsPath =System.getProperty("user.home")+"\\AppData\\Roaming\\npm\\node_modules\\appium\\build\\lib\\main.js";
+	String mainJsSystemPath;
 //	AppiumUtils(AppiumDriver driver){
 //		this.driver = driver;
 //	}
 //	
-	
-	
-//	public void waitForElementToAppear(WebElement ele) {
-//		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(5));
-//		wait.until(ExpectedConditions.attributeContains(ele, null, null));
-//	}
-	
 	
 	public List<HashMap<String,String>> getJsonData(String jsonFilePath) throws IOException{
 		//System.getProperty("user.dir")+""
@@ -42,7 +36,26 @@ public class AppiumUtils {
 		List<HashMap<String,String>> data = mapper.readValue(jsonContent,new TypeReference<List<HashMap<String,String>>>(){});
 		
 		return data;
+	
+	}
+	
+	
+	public AppiumDriverLocalService  startServer(String AppiumServerIP,int AppiumPort) throws IOException {
+		Properties prop = new Properties();
+		FileInputStream fism = new FileInputStream(System.getProperty("user.dir")+"\\src\\main\\java\\Resources\\data.properties");
+		prop.load(fism);
 		
+		String mp = prop.getProperty("mainJsPath");
+		System.out.println(mp);
+		mainJsSystemPath = System.getProperty("user.home")+mp;
+		 service = new AppiumServiceBuilder().withAppiumJS(new File(mainJsSystemPath)).withIPAddress(AppiumServerIP).usingPort(AppiumPort).build();
+		 
+		 service.start();
+		 System.out.println("++++++++++++++++++++++Appium server started+++++++++++++++++");
+		 
+		 
+		 return service;
+			
 	}
 
 }
