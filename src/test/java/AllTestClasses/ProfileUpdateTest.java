@@ -4,6 +4,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import AndroidPageObjects.LoginPage;
+import AndroidPageObjects.NewAppDashboard;
 import AndroidPageObjects.ProfileInfoUpdate;
 import AndroidPageObjects.WelcomePage;
 
@@ -35,8 +36,6 @@ public class ProfileUpdateTest extends BaseTest {
 			loginPage.clickLoginButton();
 			System.out.println("Login Button pressed");
 			Thread.sleep(1000);
-			loginPage.clickNotificationAllow();
-			loginPage.clickBannerImageCrossButton();
 			
 			
 		}
@@ -45,8 +44,8 @@ public class ProfileUpdateTest extends BaseTest {
 	public void ProfuleUpdatest() throws InterruptedException {
 		
 		ProfileInfoUpdate pi = new ProfileInfoUpdate(driver);
-		pi.ClickBurgerMenu();
-		pi.ClickProfile();
+		NewAppDashboard NAD = new NewAppDashboard(driver);
+		NAD.ClickProfile();
 		pi.ClickEditProfile();
 		pi.ClickfirstName();
 		pi.ClearFirstName();

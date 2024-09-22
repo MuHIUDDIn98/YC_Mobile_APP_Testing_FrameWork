@@ -3,14 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test name="Default test(failed)">
     <classes>
-      <class name="AllTestClasses.welcomeMsgTest">
+      <class name="AllTestClasses.NewAppDashBoardTest">
         <methods>
-          <include name="ProperLogin"/>
-          <include name="WelcomeMsgPageTransitionTest"/>
           <include name="StopServerAndDriver"/>
           <include name="StartAppiumServerAndSetOptionClass"/>
+          <include name="ServicesSectionCheck"/>
         </methods>
-      </class> <!-- AllTestClasses.welcomeMsgTest -->
+      </class> <!-- AllTestClasses.NewAppDashBoardTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

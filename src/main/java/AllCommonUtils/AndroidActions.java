@@ -52,6 +52,20 @@ public class AndroidActions extends AppiumUtils{
 	
 	
 	
+	public void ScrollTo(String action) {
+		boolean scrollable = true;
+		
+		while(scrollable) {
+			
+			scrollable = scrollTo(1,1000,900,action);
+			//scrollTo(percentage,speedpx,Height,"down")
+			System.out.println("scrolling........900px 1000px/s.......... ");
+//			scrollable = scrollTo(1,10000,2000,"up");
+			
+		}
+		
+	}
+	
 	public void ScrollToEnd() {
 		boolean scrollable = true;
 		

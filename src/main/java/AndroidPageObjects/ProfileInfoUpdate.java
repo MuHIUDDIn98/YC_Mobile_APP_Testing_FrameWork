@@ -1,5 +1,8 @@
 package AndroidPageObjects;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 
@@ -8,6 +11,7 @@ import io.appium.java_client.AppiumBy;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
+import net.bytebuddy.asm.Advice.Return;
 
 public class ProfileInfoUpdate extends AndroidActions {
 	AndroidDriver driver;
@@ -18,20 +22,12 @@ public class ProfileInfoUpdate extends AndroidActions {
 		
 	}
 	
-	@AndroidFindBy(uiAutomator ="new UiSelector().className(\"android.widget.Button\").instance(0)")
-	private WebElement BurgureMenu;
+
+	@AndroidFindBy(accessibility="Back")
+	private WebElement BackButton;
 	
-	public void ClickBurgerMenu() {
-		BurgureMenu.click();
-	}
-	
-	
-	
-	@AndroidFindBy(accessibility="Profile")
-	private WebElement profile;
-	
-	public void ClickProfile() {
-		profile.click();
+	public void ClickBack() {
+		BackButton.click();
 	}
 	
 	@AndroidFindBy(accessibility="Edit Profile")
@@ -49,6 +45,26 @@ public class ProfileInfoUpdate extends AndroidActions {
 		photoAdd.click();
 	}
 	
+	@AndroidFindBy(xpath="//android.view.View[contains(@content-desc,\"User Name\")]")
+	private WebElement UserName;
+	
+	public String getUserName() {
+		String userName=null;
+		
+		String contentDes = UserName.getAttribute("contentDescription");
+		Pattern pattern = Pattern.compile("User Name\\n([A-Za-z]+\\s[A-Za-z]+)");
+        Matcher matcher = pattern.matcher(contentDes);
+
+        if (matcher.find()) {
+            // Extract the name (group 1)
+            userName = matcher.group(1);
+            System.out.println("Extracted user name: " + userName);
+        } else {
+            System.out.println("No user name found.");
+        }
+		
+		return userName;
+	}
 	
 	
 	@AndroidFindBy(xpath="(//android.widget.EditText)[1]")
@@ -57,6 +73,8 @@ public class ProfileInfoUpdate extends AndroidActions {
 	public void ClickfirstName() {
 		firstName.click();
 	}
+	
+	
 	
 	public void ClearFirstName() {
 		firstName.clear();
