@@ -7,6 +7,7 @@ import AndroidPageObjects.LoginPage;
 import AndroidPageObjects.NewAppDashboard;
 import AndroidPageObjects.ProfileInfoUpdate;
 import AndroidPageObjects.WelcomePage;
+import testUtils.BaseTest;
 
 public class ProfileUpdateTest extends BaseTest {
 

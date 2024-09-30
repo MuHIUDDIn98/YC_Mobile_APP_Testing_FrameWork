@@ -4,6 +4,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import AndroidPageObjects.LoginPage;
+import testUtils.BaseTest;
 
 public class LoginPageTest extends BaseTest{
 	@Test(priority=1)
@@ -21,6 +22,7 @@ public class LoginPageTest extends BaseTest{
 		String incorrectMsg = loginPage.getToastIncorrectPinOrNumberMsg();
 		System.out.println(incorrectMsg);
 		Assert.assertEquals(incorrectMsg, "Incorrect Mobile Number OR PIN");
+		System.out.println("--------------------"+System.getProperty("user.dir"));
 		
 		Thread.sleep(3000);
 	}
@@ -60,7 +62,7 @@ public class LoginPageTest extends BaseTest{
 		System.out.println("Login Button pressed");
 		String incorrectPinMsg = loginPage.getToastIncorrectPinMsg();
 		System.out.println(incorrectPinMsg);
-		Assert.assertEquals(incorrectPinMsg, "Please enter PIN number");
+		Assert.assertEquals(incorrectPinMsg, "Please enter PIN numbesr");
 		
 		
 	}
@@ -81,8 +83,8 @@ public class LoginPageTest extends BaseTest{
 		loginPage.clickLoginButton();
 		System.out.println("Login Button pressed");
 		Thread.sleep(1000);
-		loginPage.clickNotificationAllow();
-		loginPage.clickBannerImageCrossButton();
+//		loginPage.clickNotificationAllow();
+//		loginPage.clickBannerImageCrossButton();
 		
 		
 	}

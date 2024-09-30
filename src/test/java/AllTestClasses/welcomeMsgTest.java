@@ -4,6 +4,7 @@ import org.testng.annotations.Test;
 
 import AndroidPageObjects.LoginPage;
 import AndroidPageObjects.WelcomePage;
+import testUtils.BaseTest;
 
 public class welcomeMsgTest extends BaseTest{
 	

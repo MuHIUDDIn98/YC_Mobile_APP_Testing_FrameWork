@@ -6,6 +6,7 @@ import org.testng.annotations.Test;
 import AndroidPageObjects.LoginPage;
 import AndroidPageObjects.NewAppDashboard;
 import AndroidPageObjects.ProfileInfoUpdate;
+import testUtils.BaseTest;
 
 public class NewAppDashBoardTest extends BaseTest {
 	

@@ -1,15 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
-  <test name="Default test(failed)">
+<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <listeners>
+    <listener class-name="AllCommonUtils.Listeneres"/>
+  </listeners>
+  <test name="LoginTest(failed)">
     <classes>
-      <class name="AllTestClasses.NewAppDashBoardTest">
+      <class name="AllTestClasses.LoginPageTest">
         <methods>
+          <include name="BlankPsswordFieldTest"/>
           <include name="StopServerAndDriver"/>
+          <include name="TestBeforeMethod"/>
           <include name="StartAppiumServerAndSetOptionClass"/>
-          <include name="ServicesSectionCheck"/>
         </methods>
-      </class> <!-- AllTestClasses.NewAppDashBoardTest -->
+      </class> <!-- AllTestClasses.LoginPageTest -->
     </classes>
-  </test> <!-- Default test(failed) -->
-</suite> <!-- Failed suite [Default suite] -->
+  </test> <!-- LoginTest(failed) -->
+</suite> <!-- Failed suite [Suite] -->

@@ -10,6 +10,7 @@ import AndroidPageObjects.AppDashBoard;
 import AndroidPageObjects.CreditStatementPage;
 import AndroidPageObjects.LoginPage;
 import AndroidPageObjects.WelcomePage;
+import testUtils.BaseTest;
 
 public class AddcreditTest extends BaseTest{
 	@Test(priority=1)

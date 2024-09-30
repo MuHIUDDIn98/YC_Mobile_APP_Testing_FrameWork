@@ -5,9 +5,10 @@
     <classes>
       <class name="AllTestClasses.NewAppDashBoardTest">
         <methods>
+          <include name="yourCreditScoreCheck"/>
           <include name="StopServerAndDriver"/>
+          <include name="TestBeforeMethod"/>
           <include name="StartAppiumServerAndSetOptionClass"/>
-          <include name="ServicesSectionCheck"/>
         </methods>
       </class> <!-- AllTestClasses.NewAppDashBoardTest -->
     </classes>
