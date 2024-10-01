@@ -6,6 +6,7 @@ import AndroidPageObjects.AppDashBoard;
 import AndroidPageObjects.LoginPage;
 import AndroidPageObjects.WelcomePage;
 import AndroidPageObjects.YourOfferSectionPage;
+import testUtils.BaseTest;
 
 public class yourOfferProductFindTest extends BaseTest {
 	@Test(priority=1)
